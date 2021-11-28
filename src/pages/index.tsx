@@ -13,7 +13,9 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <button>Start</button>
+        <button id="start-button" className="p-1 px-3 border-b-2 rounded border-blue-300 bg-blue-50 text-blue-800">
+          Start
+        </button>
       </main>
 
       <footer className={styles.footer}>
