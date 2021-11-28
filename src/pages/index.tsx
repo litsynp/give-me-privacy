@@ -1,9 +1,22 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import styles from 'src/styles/Home.module.css';
 
 const Home: NextPage = () => {
+  const [tapWaterSound, setTapWaterSound] = useState(null);
+  const [playing, setPlaying] = useState(false);
+  const togglePlaying = () => setPlaying(!playing);
+  const toggleSound = () => {
+    playing ? tapWaterSound.pause() : tapWaterSound.play();
+    togglePlaying();
+  };
+
+  useEffect(() => {
+    setTapWaterSound(new Audio('/sounds/tap-water-sound.mp3'));
+  }, []);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -13,8 +26,12 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <button id="start-button" className="p-1 px-3 border-b-2 rounded border-blue-300 bg-blue-50 text-blue-800">
-          Start
+        <button
+          id="start-button"
+          className="p-1 px-3 border-b-2 rounded border-blue-300 bg-blue-50 text-blue-800"
+          onClick={toggleSound}
+        >
+          {playing ? 'Stop' : 'Start'}
         </button>
       </main>
 
