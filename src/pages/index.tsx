@@ -18,7 +18,15 @@ const Home: NextPage = () => {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div
+      style={{
+        backgroundImage: `url(${'/images/rainfall-background.gif'})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        filter: 'grayscale(30%)',
+      }}
+    >
       <Head>
         <title>Give Me Privacy!</title>
         <meta name="description" content="Give me some privacy!" />
