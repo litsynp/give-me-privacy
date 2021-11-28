@@ -38,7 +38,7 @@ const Home: NextPage = () => {
       <footer className={styles.footer}>
         <a href="https://github.com/litsynp" target="_blank" rel="noopener noreferrer">
           <span className="mr-1">Developed by</span>
-          <Image src="/octicons-mark-github.svg" alt="Vercel Logo" width={'20rem'} height={'20rem'} />
+          <Image src="/images/octicons-mark-github.svg" alt="Vercel Logo" width={'20rem'} height={'20rem'} />
           <span className="ml-1">litsynp</span>
         </a>
       </footer>
